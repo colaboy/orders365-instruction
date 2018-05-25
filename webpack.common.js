@@ -44,8 +44,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: '年终总结',
-      template: 'template.html',
+      template: 'template.html'
     })
   ],
   output: {
