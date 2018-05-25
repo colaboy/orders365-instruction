@@ -1,4 +1,5 @@
-import './css/intruction.css';
+// import Route from './utils/backbone-route'; // 路由监听
+import './less/intruction.less';
 import jsonData from './data.json';
 import FastClick from 'fastclick';
 
@@ -16,4 +17,19 @@ window.onload = function(){
     const instructionPage = document.querySelector('.instruction-bg');
     instructionPage.classList.add('instruction-enter');
   }, 100);
+  // 路由监听示例
+  // Route.init({
+  //   'module1': function(){
+  //       console.log(1);
+  //   },
+  //   'module2/:name/:age': function(){
+  //       console.log(2, arguments);
+  //   },
+  //   'module3(/:name)(/:age)': function(){
+  //       console.log('3', arguments);
+  //   },
+  //   '*': function(){
+  //       console.log(404);
+  //   }
+  // });
 }

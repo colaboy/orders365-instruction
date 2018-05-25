@@ -17,7 +17,7 @@
   z-index: 1;
 }
 
-/* instruction动画 */
+// instruction动画
 @keyframes instruction-truck1 {
   from {
     bottom: -40px;
@@ -38,7 +38,7 @@
     bottom: 140px;
   }
 }
-/* instruction页面 */
+// instruction页面
 .instruction-bg {
   background: url(./../images/intruction_bg.jpg) no-repeat center;
   background-size: cover;
@@ -105,15 +105,17 @@
   bottom: -40px;
   right: -54px;
   animation: instruction-truck1 3000ms infinite;
-	animation-delay: 800ms;
+  animation-delay: 800ms;
+  animation-play-state: paused;
 }
 .instruction-truck2 {
   bottom: 0;
   right: -44px;
   animation: instruction-truck2 3000ms infinite;
-	animation-delay: 2000ms;
+  animation-delay: 2000ms;
+  animation-play-state: paused;
 }
-/* 入场动画 */
+// 入场动画
 .instruction-enter .instruction-title {
   transform: none;
   opacity: 1;
@@ -125,4 +127,7 @@
 .instruction-enter .instruction-build-after,.instruction-enter .instruction-build-front {
   transform: none;
   opacity: 1;
+}
+.instruction-enter .instruction-truck1, .instruction-enter .instruction-truck2 {
+  animation-play-state: running;
 }

@@ -2,20 +2,6 @@
  * Created by kenkozheng on 2015/7/16.
  * 利用backbone的路由语法，建立极简，适用于手机浏览器的路由
  * 增加了*号路由，等于backbone的defaultAction
- * Route.init({
-        'module1': function(){
-            console.log(1);
-        },
-        'module2/:name/:age': function(){
-            console.log(2, arguments);
-        },
-        'module3(/:name)(/:age)': function(){
-            console.log('3', arguments);
-        },
-        '*': function(){
-            console.log(404);
-        }
-    });
  */
 
 (function (root) {
@@ -79,7 +65,7 @@
     if ('onhashchange' in window && (document.documentMode === undefined
       || document.documentMode > 7)) {
       // At least for now HTML5 history is available for 'modern' browsers only
-      if (this.history === true) {
+      if (window.history === true) {
         // There is an old bug in Chrome that causes onpopstate to fire even
         // upon initial page load. Since the handler is run manually in init(),
         // this would cause Chrome to run it twise. Currently the only
@@ -92,10 +78,12 @@
       else {
         window.onhashchange = onchange;
       }
-      this.mode = 'modern';
+      window.mode = 'modern';
     } else {
       throw new Error('sorry, your browser doesn\'t support route');
     }
   }
 
 })(window);
+
+export default Route;
